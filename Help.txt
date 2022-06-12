@@ -1,0 +1,112 @@
+Swagger Url:
+http://localhost:9090/swagger-ui/index.html#/category-controller/getAllCategoriesUsingGET
+
+AWS URL:
+http://springbootapiproject-env.eba-qqn59p2g.us-east-1.elasticbeanstalk.com/swagger-ui/index.html
+
+
+1. Download and install Lombak jar and copy into the project
+   Open CMD and run the jar by using command: java -jar lombok.jar and ENTER than it will start to scan the driver in IDE (Eclips, InteliJ etc). once it will scan, press Install/update button and quit installer
+
+
+2. //Create schema
+   CREATE SCHEMA `springboot-api-project` ;
+ 
+3. Sample HTTP Request and Response 
+Sample request for to create User 
+
+Method : POST
+Url: http://localhost:9090/api/users/
+
+   {
+    "username":"arbindnegi",
+    "email":"arbxxxx@gmail.com",
+    "userPassword": "arbind1234",
+    "description":"User name is arbindnegi"
+  }
+ 
+Response:  
+ {
+    "id": 1,
+    "username": "arbindnegi",
+    "email": "arbxxxx@gmail.com",
+    "userPassword": "arbind1234",
+    "description": "User name is arbindnegi"
+}
+
+4 Request to get user by Id
+Method : GET
+Url: http://localhost:9090/api/users/1
+
+Response: 
+ {
+    "id": 1,
+    "username": "arbindnegi",
+    "email": "arbxxxx@gmail.com",
+    "userPassword": "arbind1234",
+    "description": "User name is arbindnegi"
+}
+
+5. Request to get All user and user by ID
+Method : GET
+Url: http://localhost:9090/api/users/
+
+Method : GET
+Url: http://localhost:9090/api/users/1
+
+Response:
+{
+    "id": 1,
+    "username": "arbindnegi",
+    "email": "arbxxxx@gmail.com",
+    "userPassword": "arbind1234",
+    "description": "Arbind Negi is a programmer"
+}
+
+
+6. Request to Update user by id
+Method : PUT
+URL: http://localhost:9090/api/users/1
+
+{
+    "username":"arbindnegi",
+    "email":"arbxxxx@gmail.com",
+    "userPassword": "arbind1234",
+    "description":"Arbind Negi is a programmer"
+  }
+  
+Response:
+{
+    "id": 1,
+    "username": "arbindnegi",
+    "email": "arbxxxx@gmail.com",
+    "userPassword": "arbind1234",
+    "description": "Arbind Negi is a programmer"
+}
+
+7. 5. Request to Delete user by id
+Method : DELETE
+Url: http://localhost:9090/api/users/1
+
+   {
+    "username":"arbindnegi1",
+    "email":"arbxxxx@gmail.com",
+    "userPassword": "arbind1234",
+    "description":"Arbind Negi is a programmer"
+  }
+  
+Response:
+{
+    "message": "User is deleted successfully",
+    "status": true
+}
+
+8. Exception Handled for those users which are not present in the database (Update or delete) Than the below response will received.
+{
+    "message": "User not found with  id  : 11",
+    "status": false
+}
+
+lombok.jar = This jar is used to generate setter/getter or a constructor automatically without writing and extra methods or code.
+spring-boot-starter-validation.jar:  This jar is used to validate our DTO class fields or variables
+modelmapper.jar =  This jar is used as a mapper of classes or convert One object to another object 
